@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bella Napoli – Egyptian Restaurant</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe0;--card:#fffaf0;--green:#1f4d3a;--terra:#c2562f;--ink:#2a2620;--line:#e0d5bd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#17201b;--card:#202b25;--green:#8fc3a6;--terra:#e0805a;--ink:#f1e9d6;--line:#34443b}}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.6 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.15}
+nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:var(--cream);border-bottom:1px solid var(--line)}
+nav b{font-family:Fraunces,Georgia,serif;font-size:1.3rem;color:var(--green)}
+nav a{color:var(--ink);text-decoration:none;margin-left:18px;font-weight:600}
+nav a:hover,a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+section{padding:72px 5vw;max-width:1100px;margin:0 auto}
+.hero{background:var(--green);color:#f6efe0;max-width:none;text-align:center;padding:110px 5vw}
+.hero h1{font-size:clamp(2.8rem,9vw,6rem);font-weight:800}
+.hero p{max-width:34em;margin:18px auto 30px;font-size:1.15rem}
+.btn{display:inline-block;background:var(--terra);color:#fff;padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:600}
+h2{font-size:2.2rem;color:var(--green);margin-bottom:24px}
+.feat,.items,.gal{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{font-size:1.15rem}
+.card p{margin:6px 0 12px;font-size:.95rem}
+.price{color:var(--terra);font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:inherit;font-weight:600;padding:8px 18px;border-radius:999px;border:1px solid var(--green);background:none;color:var(--green);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--green);color:var(--cream)}
+.tile{aspect-ratio:4/3;border-radius:14px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:600;background:linear-gradient(135deg,var(--green),var(--terra))}
+.tile:nth-child(even){background:linear-gradient(135deg,var(--terra),#8a3b1c)}
+.about{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+footer{background:var(--green);color:#f6efe0;text-align:center;padding:30px 5vw}
+footer a{color:#f6efe0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><b>Bella Napoli</b><div><a href="#menu">Menu</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero" id="home">
+<h1>Bella Napoli</h1>
+<p>A Taste of Egypt in Every Bite. Koshari, grills, sandwiches, desserts and cold drinks, cooked the way Egyptian homes cook them.</p>
+<a class="btn" href="#menu">View Menu</a>
+</header>
+
+<section id="featured">
+<h2>Featured dishes</h2>
+<div class="feat" id="featured-list"></div>
+</section>
+
+<section id="menu">
+<h2>Menu</h2>
+<div class="filters" id="filters"></div>
+<div class="items" id="items"></div>
+</section>
+
+<section id="about" class="about">
+<div><h2>Our story</h2>
+<p>Bella Napoli is a modern Egyptian restaurant built around the dishes people grew up on: a bowl of ful in the morning, koshari at lunch, a grill on Friday, and om Ali to finish.</p>
+<p>We keep the recipes familiar and the room welcoming.</p></div>
+<div class="tile" style="aspect-ratio:1">Restaurant photo placeholder</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gal">
+<div class="tile">Koshari</div><div class="tile">Mixed Grill</div><div class="tile">Konafa</div>
+<div class="tile">Dining room</div><div class="tile">Hibiscus</div><div class="tile">Om Ali</div>
+</div>
+</section>
+
+<footer id="contact">
+<h2 style="color:#f6efe0">Contact</h2>
+<p>Address: [Address placeholder]<br>Hours: Daily, 9:00 AM – 12:00 AM<br>Phone: [Phone placeholder]</p>
+<p><a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a></p>
+<p style="font-size:.85rem;opacity:.8">Bella Napoli is a fictional restaurant concept. Menu items and prices are sample content.</p>
+</footer>
+
+<script>
+const MENU = [
+ {cat:"Breakfast & Classics",name:"Ful Medames",desc:"Slow-cooked fava beans with olive oil, lemon, and spices.",price:45},
+ {cat:"Breakfast & Classics",name:"Egyptian Falafel (Taameya)",desc:"Crispy fava-bean patties served with tahini and salad.",price:40},
+ {cat:"Breakfast & Classics",name:"Foul & Eggs",desc:"Traditional fava beans served with freshly cooked eggs.",price:65},
+ {cat:"Breakfast & Classics",name:"Alexandrian Liver Sandwich",desc:"Spiced beef liver with peppers and onions in baladi bread.",price:75},
+ {cat:"Main Dishes",name:"Koshari",desc:"Rice, lentils, pasta, chickpeas, crispy onions, and tomato sauce.",price:85},
+ {cat:"Main Dishes",name:"Molokhia with Chicken",desc:"Egyptian molokhia served with rice and chicken.",price:150},
+ {cat:"Main Dishes",name:"Mahshi Mix",desc:"A selection of rice-stuffed vegetables with herbs and spices.",price:120},
+ {cat:"Main Dishes",name:"Chicken Pane",desc:"Golden crispy chicken escalope served with fries and salad.",price:145},
+ {cat:"Grills",name:"Kofta Kebab",desc:"Grilled seasoned minced-meat skewers served with rice and salad.",price:190},
+ {cat:"Grills",name:"Grilled Chicken",desc:"Marinated grilled chicken served with rice and tahini.",price:175},
+ {cat:"Grills",name:"Mixed Grill",desc:"A combination of kofta and grilled chicken with sides.",price:230},
+ {cat:"Grills",name:"Hawawshi",desc:"Baladi bread filled with seasoned minced meat and baked until crisp.",price:110},
+ {cat:"Sandwiches",name:"Shawarma Beef",desc:"Beef shawarma with tahini, pickles, and fresh vegetables.",price:95},
+ {cat:"Sandwiches",name:"Chicken Shawarma",desc:"Chicken shawarma with garlic sauce and pickles.",price:85},
+ {cat:"Sandwiches",name:"Alexandrian Sausage",desc:"Spicy Egyptian sausage with peppers and onions.",price:90},
+ {cat:"Desserts",name:"Om Ali",desc:"Traditional Egyptian bread pudding with milk and nuts.",price:65},
+ {cat:"Desserts",name:"Rice Pudding",desc:"Creamy Egyptian rice pudding topped with nuts.",price:45},
+ {cat:"Desserts",name:"Konafa with Cream",desc:"Crispy shredded pastry filled with sweet cream.",price:70},
+ {cat:"Desserts",name:"Basbousa",desc:"Traditional semolina cake soaked in light syrup.",price:40},
+ {cat:"Drinks",name:"Fresh Mango Juice",desc:"Freshly blended mango juice.",price:55},
+ {cat:"Drinks",name:"Hibiscus (Karkadeh)",desc:"Traditional Egyptian hibiscus drink, served cold.",price:35},
+ {cat:"Drinks",name:"Lemon Mint",desc:"Fresh lemon juice blended with mint.",price:40},
+ {cat:"Drinks",name:"Egyptian Tea",desc:"Black tea served the traditional Egyptian way.",price:25},
+ {cat:"Drinks",name:"Soft Drink",desc:"Chilled assorted soft drinks.",price:30}
+];
+const FEATURED = ["Koshari","Mixed Grill","Om Ali"];
+const CATS = ["All", ...new Set(MENU.map(d => d.cat))];
+
+function cardHTML(d){
+  return `<article class="card"><h3>${d.name}</h3><p>${d.desc}</p><span class="price">${d.price} EGP</span></article>`;
+}
+function showMenu(cat){
+  const list = cat === "All" ? MENU : MENU.filter(d => d.cat === cat);
+  document.getElementById("items").innerHTML = list.map(cardHTML).join("");
+  document.querySelectorAll("#filters button").forEach(b =>
+    b.setAttribute("aria-pressed", b.textContent === cat));
+}
+document.getElementById("filters").innerHTML =
+  CATS.map(c => `<button type="button">${c}</button>`).join("");
+document.getElementById("filters").addEventListener("click", e => {
+  if (e.target.tagName === "BUTTON") showMenu(e.target.textContent);
+});
+document.getElementById("featured-list").innerHTML =
+  MENU.filter(d => FEATURED.includes(d.name)).map(cardHTML).join("");
+showMenu("All");
+</script>
+</body>
+</html>
